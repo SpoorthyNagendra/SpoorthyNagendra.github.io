@@ -366,42 +366,49 @@
             overflow: hidden;
         }
 
-        .project-overlay {
+        .project-content-overlay {
             position: absolute;
-            top: 0;
+            bottom: 0;
             left: 0;
             width: 100%;
-            height: 100%;
-            background: rgba(99, 102, 241, 0.9);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            opacity: 0;
-            transition: opacity 0.3s ease;
+            background: linear-gradient(to top, rgba(9, 9, 11, 0.95), rgba(9, 9, 11, 0.8) 50%, transparent);
             padding: 2rem;
-            text-align: center;
+            text-align: left;
         }
 
-        .project-overlay h3 {
+        .project-content-overlay h3 {
             color: white;
             font-size: 1.5rem;
             font-weight: 600;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .project-tech {
+            color: #a1a1aa;
+            font-size: 0.9rem;
             margin-bottom: 1rem;
         }
 
         .view-project {
-            color: white;
+            display: inline-block;
+            color: #6366f1;
             font-weight: 500;
             padding: 0.5rem 1rem;
-            border: 2px solid white;
+            background: white;
             border-radius: 20px;
-            transition: all 0.3s;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
         }
 
         .project-card:hover .view-project {
-            background: white;
-            color: #6366f1;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .project-card:hover .project-content-overlay {
+            background: linear-gradient(to top, rgba(9, 9, 11, 0.98), rgba(9, 9, 11, 0.9) 50%, rgba(9, 9, 11, 0.7));
         }
 
         .project-link {
@@ -675,18 +682,20 @@
             <h2><span class="gradient-text">Featured Projects</span></h2>
             <div class="projects-grid">
                 <a href="project1.html" class="project-card">
-                    <div class="project-img" style="background-image: url('https://via.placeholder.com/600x400/6366f1/ffffff?text=Financial+Risk+Analyzer'); background-size: cover; height: 300px;">
-                        <div class="project-overlay">
+                    <div class="project-img" style="background-image: url('https://images.unsplash.com/photo-1642543492481-44e81e3914a6?auto=format&fit=crop&w=1200&h=800&q=80'); background-size: cover; height: 300px;">
+                        <div class="project-content-overlay">
                             <h3>LLM-Powered Financial Risk Analyzer</h3>
-                            <span class="view-project">View Project →</span>
+                            <div class="project-tech">AI • LangChain • Financial Analysis</div>
+                            <span class="view-project">View Details →</span>
                         </div>
                     </div>
                 </a>
                 <a href="project2.html" class="project-card">
-                    <div class="project-img" style="background-image: url('https://via.placeholder.com/600x400/8b5cf6/ffffff?text=Image+Retrieval'); background-size: cover; height: 300px;">
-                        <div class="project-overlay">
+                    <div class="project-img" style="background-image: url('https://images.unsplash.com/photo-1633412802994-5c058f151b66?auto=format&fit=crop&w=1200&h=800&q=80'); background-size: cover; height: 300px;">
+                        <div class="project-content-overlay">
                             <h3>Content-Based Image Retrieval</h3>
-                            <span class="view-project">View Project →</span>
+                            <div class="project-tech">Computer Vision • CNN • Deep Learning</div>
+                            <span class="view-project">View Details →</span>
                         </div>
                     </div>
                 </a>
