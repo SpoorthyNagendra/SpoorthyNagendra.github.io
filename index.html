@@ -226,10 +226,76 @@
             }
         }
 
-        .about-text p {
+        .about-text {
+            padding: 1rem 0;
+        }
+
+        .about-highlight {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: rgba(99, 102, 241, 0.05);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .about-highlight:hover {
+            background: rgba(99, 102, 241, 0.1);
+            transform: translateX(10px);
+        }
+
+        .highlight-emoji {
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            padding: 0.5rem;
+        }
+
+        .about-highlight p {
             color: #a1a1aa;
-            margin-bottom: 1rem;
+            margin: 0;
             line-height: 1.8;
+        }
+
+        .about-cta {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .about-cta p {
+            color: #e4e4e7;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .about-availability {
+            color: #8b5cf6 !important;
+            font-size: 0.95rem !important;
+            font-weight: 500;
+        }
+
+        .about-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.2);
+        }
+
+        .about-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(99, 102, 241, 0.3);
         }
 
         .skills-grid {
@@ -366,14 +432,112 @@
             overflow: hidden;
         }
 
+        .project-status {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(9, 9, 11, 0.85);
+            color: #e4e4e7;
+            padding: 0.6rem 1.2rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            z-index: 2;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .project-status-recent {
+            background: rgba(99, 102, 241, 0.9);
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #fff;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.2); opacity: 0.5; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
         .project-content-overlay {
             position: absolute;
             bottom: 0;
             left: 0;
             width: 100%;
-            background: linear-gradient(to top, rgba(9, 9, 11, 0.95), rgba(9, 9, 11, 0.8) 50%, transparent);
+            background: linear-gradient(to top, rgba(9, 9, 11, 0.98), rgba(9, 9, 11, 0.9) 50%, rgba(9, 9, 11, 0.2));
             padding: 2rem;
             text-align: left;
+        }
+
+        .project-header {
+            margin-bottom: 1.5rem;
+        }
+
+        .project-header h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 0.8rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .project-tech span {
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            backdrop-filter: blur(5px);
+        }
+
+        .tech-main {
+            background: rgba(99, 102, 241, 0.2);
+            color: #e4e4e7;
+            border: 1px solid rgba(99, 102, 241, 0.3);
+        }
+
+        .tech-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: #a1a1aa;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .project-metrics {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .metric {
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
+        }
+
+        .metric-value {
+            color: #6366f1;
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .metric-label {
+            color: #a1a1aa;
+            font-size: 0.85rem;
         }
 
         .project-content-overlay h3 {
@@ -598,8 +762,36 @@
                     <div class="profile-img">SN</div>
                 </div>
                 <div class="about-text">
-                    <p>Data Science grad student at University of Arizona (May 2026) with 2 years of software engineering experience at TCS. I build production-ready ML solutions—from anomaly detection systems to LLM-powered financial analyzers.</p>
-                    <p><strong>Open to full-time Data Science opportunities starting May 2026.</strong></p>
+                    <div class="about-highlight">
+                        <span class="highlight-emoji">💼</span>
+                        <p>Started my tech journey as an Assistant Systems Engineer at TCS, where I discovered my true calling while automating banking processes. Working with data patterns and system behaviors sparked my fascination with data science and machine learning.</p>
+                    </div>
+                    
+                    <div class="about-highlight">
+                        <span class="highlight-emoji">�</span>
+                        <p>The turning point came when I developed an anomaly detection system that reduced system downtime by 20%. This success showed me the immense potential of data-driven solutions and motivated my transition into data science.</p>
+                    </div>
+
+                    <div class="about-highlight">
+                        <span class="highlight-emoji">🎓</span>
+                        <p>Now, I'm pursuing my passion at University of Arizona's Data Science program, where I'm mastering advanced ML techniques and AI applications. From banking automation to LLM-powered financial analyzers, my journey reflects my evolution in tech.</p>
+                    </div>
+
+                    <div class="about-highlight">
+                        <span class="highlight-emoji">🌟</span>
+                        <p>What drives me? The power to transform complex data challenges into innovative solutions. My background in systems engineering combined with data science expertise allows me to bridge the gap between technical complexity and practical business impact.</p>
+                    </div>
+
+                    <div class="about-highlight">
+                        <span class="highlight-emoji">🎯</span>
+                        <p>Currently focused on cutting-edge applications of Large Language Models and Neural Networks, while leveraging my industry experience to develop production-ready ML solutions that make a real difference.</p>
+                    </div>
+
+                    <div class="about-cta">
+                        <p><strong>Ready to bring my unique blend of software engineering and data science expertise to innovative projects</strong></p>
+                        <p class="about-availability">Open to full-time Data Science opportunities starting May 2026</p>
+                        <a href="#contact" class="about-btn">Let's Connect</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -683,18 +875,73 @@
             <div class="projects-grid">
                 <a href="project1.html" class="project-card">
                     <div class="project-img" style="background-image: url('https://images.unsplash.com/photo-1642543492481-44e81e3914a6?auto=format&fit=crop&w=1200&h=800&q=80'); background-size: cover; height: 300px;">
+                        <div class="project-status project-status-recent">
+                            <span class="status-dot"></span>
+                            Latest Project • 2025
+                        </div>
                         <div class="project-content-overlay">
-                            <h3>LLM-Powered Financial Risk Analyzer</h3>
-                            <div class="project-tech">AI • LangChain • Financial Analysis</div>
+                            <div class="project-header">
+                                <h3>LLM-Powered Financial Risk Analyzer</h3>
+                                                                <div class="project-tech">
+                                    <span class="tech-main">LangChain</span>
+                                    <span class="tech-main">OpenAI</span>
+                                    <span class="tech-main">FAISS</span>
+                                    <span class="tech-main">RAG</span>
+                                    <span class="tech-secondary">Vector DB</span>
+                                    <span class="tech-secondary">NLP</span>
+                                </div>
+                            </div>
+                            <div class="project-metrics">
+                                <div class="metric">
+                                    <span class="metric-value">35%</span>
+                                    <span class="metric-label">Faster Analysis</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-value">500+</span>
+                                    <span class="metric-label">Reports Analyzed</span>
+                                </div>
+                            </div>
                             <span class="view-project">View Details →</span>
                         </div>
                     </div>
                 </a>
                 <a href="project2.html" class="project-card">
                     <div class="project-img" style="background-image: url('https://images.unsplash.com/photo-1633412802994-5c058f151b66?auto=format&fit=crop&w=1200&h=800&q=80'); background-size: cover; height: 300px;">
+                        <div class="project-status">Undergrad Project • 2022</div>
                         <div class="project-content-overlay">
-                            <h3>Content-Based Image Retrieval</h3>
-                            <div class="project-tech">Computer Vision • CNN • Deep Learning</div>
+                            <div class="project-header">
+                                <h3>Content-Based Image Retrieval</h3>
+                                <div class="project-tech">
+                                    <span class="tech-main">Python</span>
+                                    <span class="tech-main">MATLAB</span>
+                                    <span class="tech-secondary">Computer Vision</span>
+                                    <span class="tech-secondary">Image Processing</span>
+                        </div>
+                    </div>
+                </a>
+            
+                <a href="project2.html" class="project-card">
+                    <div class="project-img" style="background-image: url('https://images.unsplash.com/photo-1633412802994-5c058f151b66?auto=format&fit=crop&w=1200&h=800&q=80'); background-size: cover; height: 300px;">
+                        <div class="project-status">Undergrad Project • 2022</div>
+                        <div class="project-content-overlay">
+                            <div class="project-header">
+                                <h3>Content-Based Image Retrieval</h3>
+                                <div class="project-tech">
+                                    <span>Computer Vision</span>
+                                    <span>CNN</span>
+                                    <span>Deep Learning</span>
+                                </div>
+                            </div>
+                            <div class="project-metrics">
+                                <div class="metric">
+                                    <span class="metric-value">81%</span>
+                                    <span class="metric-label">Model Accuracy</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-value">10K+</span>
+                                    <span class="metric-label">Images Processed</span>
+                                </div>
+                            </div>
                             <span class="view-project">View Details →</span>
                         </div>
                     </div>
