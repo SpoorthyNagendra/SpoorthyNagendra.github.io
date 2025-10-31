@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Retrieval System - Spoorthy Nagendra</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: #e4e4e7;
+            background: #09090b;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(24, 24, 27, 0.6);
+            backdrop-filter: blur(10px);
+            padding: 3rem;
+            border-radius: 20px;
+            border: 1px solid rgba(99, 102, 241, 0.2);
+        }
+
+        .back-link {
+            color: #6366f1;
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            display: inline-block;
+            transition: color 0.3s;
+        }
+
+        .back-link:hover {
+            color: #8b5cf6;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #ec4899 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        h2 {
+            color: #6366f1;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+
+        p {
+            color: #a1a1aa;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        ul {
+            color: #a1a1aa;
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+
+        .tech-tag {
+            background: rgba(99, 102, 241, 0.2);
+            color: #e4e4e7;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(99, 102, 241, 0.3);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+            margin-top: 2rem;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 30px rgba(99, 102, 241, 0.5);
+        }
+
+        .highlight-box {
+            background: rgba(99, 102, 241, 0.1);
+            border-left: 4px solid #6366f1;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← Back to Portfolio</a>
+        
+        <h1>🖼️ Content-Based Image Retrieval System</h1>
+
+        <h2>Problem Statement</h2>
+        <p>Traditional image search systems heavily rely on text-based tags and metadata, which creates several challenges:</p>
+        <ul>
+            <li>Manual tagging is time-consuming and inconsistent</li>
+            <li>Text descriptions often fail to capture visual nuances</li>
+            <li>Difficult to find visually similar images without proper tags</li>
+            <li>Scalability issues with large image databases</li>
+        </ul>
+        <p>There was a need for an intelligent system that could understand and search images based purely on visual content, not just text labels.</p>
+
+        <h2>Solution</h2>
+        <p>I developed a sophisticated content-based image retrieval (CBIR) system using convolutional neural networks and advanced feature extraction techniques that enables visual similarity search.</p>
+        
+        <div class="highlight-box">
+            <strong>Key Innovation:</strong> By leveraging deep learning for feature extraction and statistical modeling for similarity matching, the system can find visually similar images with 81% accuracy without requiring any text tags.
+        </div>
+
+        <p><strong>How it works:</strong></p>
+        <ul>
+            <li><strong>Feature Extraction:</strong> Uses CNN to extract high-level visual features from images</li>
+            <li><strong>Statistical Modeling:</strong> Applies weight matrices and bias elements to refine feature representation</li>
+            <li><strong>Similarity Matching:</strong> Calculates visual similarity using advanced distance metrics</li>
+            <li><strong>Retrieval Engine:</strong> Returns top-k most similar images from the database</li>
+        </ul>
+
+        <h2>Technologies & Architecture</h2>
+        <div class="tech-stack">
+            <span class="tech-tag">MATLAB</span>
+            <span class="tech-tag">CNN</span>
+            <span class="tech-tag">Computer Vision</span>
+            <span class="tech-tag">Feature Extraction</span>
+            <span class="tech-tag">Statistical Modeling</span>
+            <span class="tech-tag">Image Processing</span>
+        </div>
+
+        <p><strong>Technical Approach:</strong></p>
+        <ul>
+            <li>Designed custom CNN architecture optimized for feature extraction</li>
+            <li>Implemented hyperparameter tuning for optimal performance</li>
+            <li>Applied advanced feature engineering techniques</li>
+            <li>Used statistical methods to improve precision and reduce retrieval error</li>
+        </ul>
+
+        <h2>Impact & Results</h2>
+        <ul>
+            <li><strong>81% accuracy</strong> in retrieving visually similar images</li>
+            <li><strong>Eliminated need</strong> for manual image tagging</li>
+            <li><strong>Scalable solution</strong> for large image databases</li>
+            <li><strong>Real-world application</strong> in digital asset management</li>
+        </ul>
+
+        <h2>Technical Challenges Solved</h2>
+        <ul>
+            <li>Handling high-dimensional feature spaces efficiently</li>
+            <li>Balancing precision vs. recall in similarity matching</li>
+            <li>Optimizing CNN architecture for feature extraction</li>
+            <li>Reducing computational complexity for real-time retrieval</li>
+        </ul>
+
+        <a href="https://github.com/yourusername/image-retrieval" target="_blank" class="btn">View Project on GitHub →</a>
+    </div>
+</body>
+</html>
