@@ -652,7 +652,13 @@
             margin-bottom: 1rem;
         }
 
-        .view-project {
+        .project-links {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .view-project, .github-link {
             display: inline-block;
             color: #6366f1;
             font-weight: 500;
@@ -662,9 +668,20 @@
             opacity: 0;
             transform: translateY(10px);
             transition: all 0.3s ease;
+            text-decoration: none;
         }
 
-        .project-card:hover .view-project {
+        .github-link {
+            transition-delay: 0.1s;
+        }
+
+        .view-project:hover, .github-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
+        }
+
+        .project-card:hover .view-project,
+        .project-card:hover .github-link {
             opacity: 1;
             transform: translateY(0);
         }
@@ -1040,7 +1057,10 @@
                                     <span class="metric-label">Images Processed</span>
                                 </div>
                             </div>
-                            <span class="view-project">View Details →</span>
+                            <div class="project-links">
+                                <span class="view-project">View Details →</span>
+                                <a href="https://github.com/SpoorthyNagendra/Content-Based-Image-Retrieval-Using-Machine-Learning" target="_blank" class="github-link">View Code →</a>
+                            </div>
                         </div>
                     </div>
                 </a>
