@@ -467,16 +467,37 @@
             border-radius: 16px;
             overflow: hidden;
             border: 1px solid rgba(99, 102, 241, 0.2);
-            transition: all 0.3s;
+            transition: all 0.3s ease-out;
             position: relative;
             text-decoration: none;
             display: block;
+            cursor: pointer;
         }
 
         .project-card:hover {
             transform: translateY(-8px);
             border-color: rgba(99, 102, 241, 0.5);
             box-shadow: 0 20px 50px rgba(99, 102, 241, 0.2);
+        }
+
+        .project-card:hover .project-content-overlay {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .project-content-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(to top, 
+                rgba(9, 9, 11, 0.95) 0%,
+                rgba(9, 9, 11, 0.9) 50%,
+                rgba(9, 9, 11, 0.8) 100%
+            );
+            padding: 2rem;
+            text-align: left;
+            transition: all 0.3s ease-out;
         }
 
         .project-card:hover .project-overlay {
@@ -983,7 +1004,7 @@
                     </div>
                 </a>
                 <a href="project2.html" class="project-card">
-                    <div class="project-img" style="background-image: url('https://images.unsplash.com/photo-1633412802994-5c058f151b66?auto=format&fit=crop&w=1200&h=800&q=80'); background-size: cover; height: 300px;">
+                    <div class="project-img" style="background-image: url('https://images.unsplash.com/photo-1527474305487-b87b222841cc?auto=format&fit=crop&w=1200&h=800&q=80'); background-size: cover; height: 300px;">
                         <div class="project-status">Undergrad Project • 2022</div>
                         <div class="project-content-overlay">
                             <div class="project-header">
